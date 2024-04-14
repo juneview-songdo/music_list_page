@@ -9,18 +9,18 @@ import '_/state_mother.dart';
 class NewView extends StatefulWidget {
   NewView(
       {super.key,
-      this.musicList = const [
-        ['Low Life', 'Brand New Life'],
-        ['Hymn of the Weekend', 'Feat. Some Band'],
-        ['The Scientist', 'Tune of the world'],
-        ['Yellow', 'Live in Buenos Aires'],
-        ['Fix You', 'Yuri\'s Piano'],
-        ['Viva La Vida', 'Volcanic Orchestra'],
-        ['Paradise', 'Night Life'],
-        ['Adventure of a Lifetime', 'Group of People'],
-        ['A Sky Full of Stars', 'Futuristic Polar Bears'],
-        ['Magic', 'Coldplay'],
-      ]});
+        this.musicList = const [
+          ['Low Life', 'Brand New Life'],
+          ['Hymn of the Weekend', 'Feat. Some Band'],
+          ['The Scientist', 'Tune of the world'],
+          ['Yellow', 'Live in Buenos Aires'],
+          ['Fix You', 'Yuri\'s Piano'],
+          ['Viva La Vida', 'Volcanic Orchestra'],
+          ['Paradise', 'Night Life'],
+          ['Adventure of a Lifetime', 'Group of People'],
+          ['A Sky Full of Stars', 'Futuristic Polar Bears'],
+          ['Magic', 'Coldplay'],
+        ]});
 
   final List<List<String>> musicList;
 
@@ -74,8 +74,8 @@ class NewViewState extends State<NewView> with StateMother {
               ),
               const SizedBox(height: 40),
               SizedBox(
-                height: MediaQuery.of(context).size.width * 0.39,
-                width: MediaQuery.of(context).size.width,
+                height: 200,
+                width: double.infinity,
                 child: Stack(
                   children: <Widget>[
                     Align(
@@ -95,8 +95,8 @@ class NewViewState extends State<NewView> with StateMother {
                       child: NeumorphicCircleView(
                         borderWidth: 10,
                         borderColor: Color.fromARGB(255, 36, 36, 36),
-                        height: MediaQuery.of(context).size.width * 0.39,
-                        width: MediaQuery.of(context).size.width * 0.39,
+                        height: 180,
+                        width: 180,
                         child: Image.asset(
                           'assets/view/music_list_page/music_disk.webp',
                           fit: BoxFit.cover,
@@ -134,9 +134,9 @@ class NewViewState extends State<NewView> with StateMother {
                     borderRadius: BorderRadius.circular(25),
                     border: i == selectedIndex
                         ? Border.all(
-                            color: Color.fromRGBO(62, 69, 75, 1),
-                            width: 1,
-                          )
+                      color: Color.fromRGBO(62, 69, 75, 1),
+                      width: 1,
+                    )
                         : null,
                   ),
                   child: Padding(
@@ -182,14 +182,14 @@ class NewViewState extends State<NewView> with StateMother {
                           intensity: 0.3,
                           borderWidth: 6,
                           color:
-                              i == selectedIndex ? Color.fromRGBO(230, 59, 16, 1) : null,
+                          i == selectedIndex ? Color.fromRGBO(230, 59, 16, 1) : null,
                           child: Icon(
                             i == selectedIndex
                                 ? Icons.pause_rounded
                                 : Icons.play_arrow_rounded,
                             size: 18,
                             color:
-                                i == selectedIndex ? Colors.white : Colors.grey,
+                            i == selectedIndex ? Colors.white : Colors.grey,
                           ),
                           onPressed: () {
                             setState(() {
